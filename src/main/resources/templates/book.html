@@ -1,0 +1,190 @@
+<html>
+<head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />  
+        <link rel="stylesheet" href="boockstyle.css" /> 
+</head>    
+
+<body background>
+    <div class="row">
+
+        <div class="container">
+
+                <div class="col-sm-10 col-md-10">
+                   <div class="panel panel-info">
+
+                        <div class="panel-heading">
+                                <div class="panel-tittle"><strong><i class="" aria-hidden="true"></i>ADD BOOK</strong></div>
+                         </div>
+                <div class=" panel-body">
+                <form class="form-horizontal" id="BookForm"  name="BookForm" action="book" role="form" method="post" onsubmit="return GEEKFORGEEKS()">
+                    <div class="form-group">
+                         <label class="control-label col-sm-2"> Book Name:</label>
+                         <div class="col-sm-9">
+                             <input type="text" placeholder="Book Name" name="Bname" class="form-control" id="" >
+                         </div>
+                       </div> <br><br><br>
+
+                       <div class="form-group">
+                            <label class="control-label col-sm-2"> Auther:</label>
+                            <div class="col-sm-9">
+                                <input type="text" placeholder="Auther Name" name="Auther" class="form-control" id="" >
+                            </div>
+                          </div> <br><br><br>
+                          
+                          <div class="form-group">
+                            <label class="control-label col-sm-2"> ISBN:</label>
+                            <div class="col-sm-9">
+                                <input type="text" placeholder="ISBN" name="ISBN" class="form-control" id="" >
+                            </div>
+                          </div> <br><br><br>
+
+                          <div class="form-group">
+                            <label class="control-label col-sm-2"> Year:</label>
+                            <div class="col-sm-9">
+                                <input type="date" placeholder="d/m/y" name="Year" class="form-control" id="" >
+                            </div>
+                          </div> <br><br><br>
+
+                          
+                          <div class="form-group">
+                            <label class="control-label col-sm-2"> Edition:</label>
+                            <div class="col-sm-9">
+                                <input type="text" placeholder="Edition" name="Edition" class="form-control" id="" >
+                            </div>
+                          </div> <br><br><br>
+
+                          
+
+
+                          <div class="form-group">
+                            <label class="control-label col-sm-2"> Publisher:</label>
+                            <div class="col-sm-9">
+                                <input type="text" placeholder="Publisher Name" name="Publisher" class="form-control" id="" >
+                            </div>
+                          </div> <br><br><br>
+                        
+                          <div class="form-group">
+                            <label class="control-label col-sm-2"> price:</label>
+                            <div class="col-sm-9">
+                                <input type="text" placeholder="$500" name="price" class="form-control" id="" >
+                            </div>
+                          </div> <br><br><br>
+                         
+
+                          <div class="form-group">
+                                      
+                            <label class="control-label col-sm-2"> Content:</label>
+                            <div class="col-sm-9">
+                                <textarea rows="2" cols="20" placeholder="Content" name="Content" class="form-control" id="" required>  </textarea>
+                            </div>
+                          </div> <br><br><br><br>
+
+
+                          <div class="form-group">
+                              <label class="control-label col-sm-2">Category</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" > 
+                                        <option value="Books" name="ke">Books</option>
+                                        <option value="Newspapers" name="ke">Newspapers</option>
+                                        <option value="Government" name="ke">Government</option>
+                                        <option value="Publications" name="ke">Publications</option>
+                                        <option value="Ola_Leaf_Manuscript" name="ke">Ola_Leaf_Manuscript</option>
+                                    </select>
+                                </div>  
+                          </div><br><br><br>
+
+                          
+                          <div class="form-group">
+                            <label class="control-label col-sm-2"> Type:</label>
+                            <div class="col-sm-9">
+                                <input type="radio" name="Typ" value="Public" checked> Public<br>
+                                <input type="radio" name="Typ" value="Rare"> Rare
+                                
+                            </div>
+                          </div> <br><br><br>
+
+
+                          
+                          </div> <br><br><br>
+
+                            
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12">
+                                <div class="col-sm-6 col-md-8"></div>
+            
+                                    <div class="col-sm-3 col-md-2">
+                                    <button class="btn btn-dark btn-block submit_button button_shades"  ><i class="fa fa-paper-plane create_button_icon" aria-hidden="true"></i> Submit </button>
+                                    </div>
+                                <div class="col-sm-3 col-md-2"> <a  onclick="myFunction()" value="Reset form" class="btn btn-danger btn-block clean_button button_shades" > <i class="fa fa-times create_button_icon"    aria-hidden="true"></i> Clean </a> </div>
+                        </div>
+
+                  
+                       </div>
+                 </div>
+                </form>
+            </div>
+      
+        </div>
+    </div>
+   
+
+        <script> 
+
+function GEEKFORGEEKS()                                    
+        { 
+
+            var Bname = document.forms["BookForm"]["Bname"];                  
+            var Auther = document.forms["BookForm"]["Auther"];  
+            var price = document.forms["BookForm"]["price"];                  
+            var fileToUpload = document.forms["BookForm"]["fileToUpload"];  
+           
+            if (Bname.value == "")                                  
+            { 
+                window.alert("Please enter Book name."); 
+                Bname.focus(); 
+                return false; 
+            } 
+                
+           
+            if (Auther.value == "")                           
+            { 
+                window.alert("Please enter Auther Name."); 
+                Auther.focus(); 
+                return false; 
+            } 
+
+            if (price.value == "")                           
+            { 
+                window.alert("Please enter price."); 
+                price.focus(); 
+                return false; 
+            } 
+
+
+            if (fileToUpload.value == "")                           
+            { 
+                window.alert("Please enter fileToUpload."); 
+                fileToUpload.focus(); 
+                return false; 
+            } 
+           
+        
+          
+            return true; 
+        }
+
+        
+        function myFunction() {      
+               document.getElementById("BookForm").reset();
+             }
+
+        </script> 
+     
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<style>
+
+.panel-body {
+	background-color: rgba(215, 219, 222, 0.91) !important;
+    border-radius:5px !important;
+    width: 100%
+}
+.control-label{
+    float: left;
+margin-left: -1% !important;
+}
+.panel-info > .panel-heading {
+	color: black !important;
+        font-size: 25px;
+        width: 100%;
+        margin-right: 15px !important;
+	background-color: #97B2C7 !important;
+	border-color: #bce8f1 !important;
+}
+
+body{
+    background-image:url("http://www.toca-ch.com/data/walls/39/22596903.jpg");
+}
+.float_left_elements{ float: left;
+margin-right: 1%; }
+
+.inner_panel{
+    margin-right: 15px !important;
+    margin-top: 5px;
+}
+</style>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<script type="text/javascript" src="webjars/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" th:src="@{js/tempry.js}" src="../static/js/tempry.js"></script>
+<link  rel="stylesheet" href="webjars/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"/>
+<title>Pending registration</title>
+</head>
+<body>
+<div class="container">
+       <form action="/"> <button class="btn btn-success nBtn" > home </button></form>
+       <div class="card">
+           
+             <div class="card-block">
+             
+                   <table class="table table-hover">
+                   
+                   <thead>
+                        <tr>
+                            <th>ID</th>
+                             <th> NAME </th>
+                               <th> NIC / PB  </th>
+                                <th> DATE </th>
+                                <th> PROFESSION </th>
+                    
+                                    <th> ADDRESS </th>
+                                   <th> NATIONALITY  </th>
+                                   <th> GENDER  </th>
+                                   <th> EMAIL  </th>
+                                 
+                   
+                        
+                        </tr>
+                   
+                   
+                   </thead>
+                   <tbody>
+                         <tr th:each="reg:${dtl.content}">
+                         <td th:text="${reg.id}"  ></td>
+                         <td th:text="${reg.fname}"></td>
+                 <td th:text="${reg.NIC}"></td>
+                 <td th:text="${reg.DOB}"></td>
+                   <td th:text="${reg.pro}"></td>
+                     <td th:text="${reg.address}"></td>
+                       <td th:text="${reg.nat}"></td>
+                         <td th:text="${reg.gender}"></td>
+                         <td th:text="${reg.email}"></td>
+                          
+                          <td><a  th:href="@{findtemp/(id=${reg.id})}" class="btn btn-primary eBtn">approve</a> </td>
+                           <td><a  th:href="@{deltemp/(id=${reg.id})}" class="btn btn-danger delBtn">Delete</a> </td>
+                         
+                         </tr>
+                      
+                   </tbody>
+                   
+                   </table>
+                   <hr/>
+                   
+                   <ul class="nav nav-pills">
+                   
+                   <li class="nav-item" th:each="i : ${#numbers.sequence(0,dtl.totalPages-1)}">
+                   <a th:href="@{/(pages=${i})}" th:text="${i}" class="nav-link"
+                   th:classappend="${currentPage}==${i}?'active' : ''"></a>
+                   </li>
+                   </ul>
+                   
+             
+             
+             
+             </div>
+       
+       </div>
+
+   
+          <div class="myForm">
+          <form th:action="@{/save}" method="post">
+          
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">approval to proceed</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+          <div class="form-group">
+            <label for="id" class="col-form-label">id:</label>
+            <input type="text" class="form-control" id="id" name="id" value=""/>
+          </div>
+          
+          
+          <div class="form-group">
+            <label for="fname" class="col-form-label">fname:</label>
+            <input type="text" class="form-control" id="fname" name="fname" value=""/>
+          </div>
+           
+          <div class="form-group">
+            <label for="NIC" class="col-form-label">NIC:</label>
+            <input type="text" class="form-control" id="NIC" name="NIC" value=""/>
+          </div>
+          <div class="form-group">
+            <label for="DOB" class="col-form-label">DOB:</label>
+            <input type="text" class="form-control" id="DOB" name="DOB" value=""/>
+          </div>
+          <div class="form-group">
+            <label for="pro" class="col-form-label">pro:</label>
+            <input type="text" class="form-control" id="pro" name="pro" value=""/>
+          </div>
+           <div class="form-group">
+            <label for="address" class="col-form-label">address:</label>
+            <input type="text" class="form-control" id="address" name="address" value=""/>
+          </div>
+          <div class="form-group">
+            <label for="nat" class="col-form-label">nat:</label>
+            <input type="text" class="form-control" id="nat" name="nat" value=""/>
+          </div>
+          <div class="form-group">
+            <label for="gender" class="col-form-label">gender:</label>
+            <input type="text" class="form-control" id="gender" name="gender" value=""/>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="col-form-label">email:</label>
+            <input type="text" class="form-control" id="email" name="email" value=""/>
+          </div>
+          
+           <div class="form-group">
+            <label for="pass" class="col-form-label">pass:</label>
+            <input type="text" class="form-control" id="pass" name="pass" value=""/>
+          </div>
+          
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="approve"/>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+    </form>       
+          </div>
+         
+          <!-- brk -->
+          
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="alert alert-danger">DELETE?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a  href="" class="btn btn-danger" id="delRef">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+          
+          
+</div>
+</body>
+</html>

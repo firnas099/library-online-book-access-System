@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style type="text/css">
+
+body {background-color: coral;}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src= "//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+  <script src=" //cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-reboot.min.css">
+</head>
+<body>
+<form action="sbook" method="get">
+<table  cellpadding="25" cellspacing="25" >
+ <tr>
+ 
+                 <th>BLO</th>
+               <th> Book deatils </th>
+               <th><input type="text" name="name" />:BOOK NAME  </th>
+               <th><input type="submit" value="Search "> 
+               <br/>
+               
+               
+                </th>
+                     
+                   
+                    </tr>
+
+                 
+              <tr th:each="emp :${data}">
+               <td  > <img th:src="@{https://images-na.ssl-images-amazon.com/images/I/4191%2BqYWebL.jpg} "   width="250" height="250" /> </td>
+           
+          <td><input type="text" th:value="${emp?.id}"/><br/>
+               <input type="text" th:value="${emp?.Bname}"/><br/>
+               <input type="text" th:value="${emp?.Auther}"/><br/>
+               <input type="text" th:value="${emp?.ISBN}"/><br/>
+               <input type="text" th:value="${emp?.Year}"/><br/>
+               
+               <input type="text" th:value="${emp?.Edition}"/><br/>
+               <input type="text" th:value="${emp?.price}"/><br/>
+               <input type="text" th:value="${emp?.Content}"/><br/>
+               <input type="text" th:value="${emp?.ke}"/><br/>
+               <input type="text" th:value="${emp?.Typ}"/></td>
+          
+           
+           
+          
+          
+          
+         
+           </tr>
+
+</table>
+</form>
+</body>
+</html>

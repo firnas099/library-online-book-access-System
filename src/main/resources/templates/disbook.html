@@ -1,0 +1,158 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> 
+        
+<style>
+
+.centered {
+    position: absolute;
+      top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    display: block;
+    border: 2px solid black;
+      padding: 2px;
+      margin: 3px;
+}
+body{
+    background-color: #2e2e72;
+}
+.word {
+     /*:center;*/ 
+    position: absolute;
+    top: 35%;
+    left: 60%;
+  
+    transform: translate(-50%, -50%);
+}
+
+
+
+.word * { 
+
+ padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: left;
+    background-color: #9494b8;
+    color: white;
+     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+ 
+}
+
+h2{
+    background-color: #2e2e72 !important;
+    color:f88888  !important;
+}
+
+label{
+ color:white !important;
+}
+.head{
+    position: absolute;
+    top: 8%;
+    left: 10%;
+}
+
+
+</style>
+
+
+</head>
+<body>
+        <div class="container head">
+            <div class="col-md-12">
+                   
+                    <div class="col-md-1">
+                            <label>Search</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                                <button class="btn btn-primary btn-block submit_button button_shades"  ><i class="fa fa-paper-plane create_button_icon" aria-hidden="true"></i> Search </button>
+                        </div>
+            </div>
+        </div>
+        
+        <div id="ddd">
+   
+    
+                <div class="centered">  
+                    <label>
+                    <td> <img src="download.jfif" height="300" width="250"/>
+                    </div></td>
+                    </label></br>
+                </div>
+
+                
+<div class="word">
+        <h2> VIEW BOOK Details</h2>
+        <!-- <p>The .table-hover class adds a hover effect (grey background color) on table rows:</p>             -->
+      
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Auther</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Year</th>
+            <th scope="col">Edition</th>
+           
+            
+          
+            <th scope="col">price</th>
+            <th scope="col">Content</th>
+            <th scope="col">Category</th>
+             <th scope="col">Type</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            <tr th:each="emp :${data}">
+            <th scope="row">1</th>
+            <td th:value="${emp?.id}"></td>
+            <td th:value="${emp?.Bname}"></td>
+            <td th:value="${emp?.Auther}"></td>
+            <td th:value="${emp?.ISBN}"></td>
+            <td th:value="${emp?.Year}"></td>
+            <td th:value="${emp?.Edition}"> </td>
+            <td th:value="${emp?.price}"></td> 
+            <td th:value="${emp?.Content}"></td>
+            <td th:value="${emp?.ke}"></td>
+            <td th:value="${emp?.Typ}"></td>
+          
+           
+          
+           
+           
+           </tr>
+        </tbody>
+      </table>
+      </div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script> 
+<script type="text/javascript" src="js/gmap3.min.js"></script> 
+<script type="text/javascript" src="js/owl.carousel.min.js"></script> 
+<script type="text/javascript" src="js/script.js"></script> 
+
+
+</body>
+
+</html>

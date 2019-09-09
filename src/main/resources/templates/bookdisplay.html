@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src= "//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+  <script src=" //cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-reboot.min.css">
+</head>
+<body>
+<form action="searchboock">
+<table >
+<tr>
+<td>  <input type="text" name="name"/> :Book Name </td><td><input type="submit" value="SEARCH"/></td>
+</tr>
+</table>
+
+      <table border="1">
+           <tr>
+               <th> id </th>
+                    
+                     <th> Book Name </th>
+                    <th> Auther  </th>
+                    <th> ISBN </th>
+                    <th> Year </th>
+                    
+                    <th> Edition </th>
+                    <th> price  </th>
+                    <th> Content  </th>
+                    <th> Category  </th>
+                    <th> Type  </th>
+                    </tr>
+           <tr th:each="emp :${data}">
+         
+          <td><input type="text" th:value="${emp?.id}"/> </td>
+           <td><input type="text" th:value="${emp?.Bname}"/> </td>
+           <td><input type="text" th:value="${emp?.Auther}"/> </td>
+           <td><input type="text" th:value="${emp?.ISBN}"/> </td>
+           <td><input type="text" th:value="${emp?.Year}"/> </td>
+           <td><input type="text" th:value="${emp?.Edition}"/> </td>
+           <td><input type="text" th:value="${emp?.price}"/> </td>
+           <td><input type="text" th:value="${emp?.Content}"/> </td>
+           <td><input type="text" th:value="${emp?.ke}"/> </td>
+           <td><input type="text" th:value="${emp?.Typ}"/> </td>
+           
+           
+          
+           
+           
+           </tr>
+           
+      </table>
+      
+      
+</form>
+     
+
+
+</body>
+</html>
